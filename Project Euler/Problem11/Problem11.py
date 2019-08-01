@@ -7,15 +7,52 @@ def up(grid,row,column):#if the row number is less than 3 then there is no up
     else:
         x=(grid[row][column]*grid[row-1][column]*grid[row-2][column]*grid[row-3][column])
         print(x)
-# def down(grid,row,column):#if the row number is greater than 16 there is no down
 
-# def left(grid,row,column):# if the column number is less than 3 there is no left
+def down(grid,row,column):#if the row number is greater than 16 there is no down
+    if (row > 16):
+        return
+    else:
+        x=(grid[row][column]*grid[row+1][column]*grid[row+2][column]*grid[row+3][column])
+        print(x)
 
-# def right(grid,row,column):# if the column number is greater than 16 there is no right
 
-# def rightDiagonal(grid,row,column):# if the row number is greater than 16 or the column number is greater than 16 
-# def leftDiagonal(grid,row,column):# # if the row number is greater than 16 or the column number is less than 3
+def left(grid,row,column):# if the column number is less than 3 there is no left
+    if (column < 3):
+        return
+    else:
+        x=(grid[row][column]*grid[row][column-1]*grid[row][column-2]*grid[row][column-3])
+        print(x)
+
+
+def right(grid,row,column):# if the column number is greater than 16 there is no right
+    if (column > 16):
+        return
+    else:
+        x=(grid[row][column]*grid[row][column+1]*grid[row][column+2]*grid[row][column+3])
+        print(x)
+
+def rightDiagonal(grid,row,column):# if the row number is greater than 16 or the column number is greater than 16 
+    if ((row > 16) or (column > 16)):
+        return
+    else:
+        x=(grid[row][column]*grid[row+1][column+1]*grid[row+2][column+2]*grid[row+3][column+3])
+        print(x)
+
+def leftDiagonal(grid,row,column):# # if the row number is greater than 16 or the column number is less than 3
+    if ((row > 16) or (column < 3)):
+        return
+    else:
+        x=(grid[row][column]*grid[row+1][column-1]*grid[row+2][column-2]*grid[row+3][column-3])
+        print(x)
+
+
+
 def printAll(grid):
     for row in grid:
         print(row)
 up(x,3,0)
+down(x,0,0)
+left(x,0,3)
+right(x,0,16)
+rightDiagonal(x,0,0)
+leftDiagonal(x,0,3)
