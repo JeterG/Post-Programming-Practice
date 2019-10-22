@@ -8,6 +8,11 @@ def make_chocolate(small, big, goal):
         return small
     elif goal%5==0 and big*5>=goal:
         return 0
+    elif goal-big*5<small and (goal-big*5)>0:
+        return goal-big*5    
     elif goal%5<small:
-        return goal-big*5
+        return goal%5   
+
     return -1
+# print(make_chocolate(1000,1000000,5000006))
+# print(make_chocolate(6,1,10))
