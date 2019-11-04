@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - sleepIn",
+            "request": "launch",
+            "mainClass": "sleepIn"
+        }
+    ]
+}
