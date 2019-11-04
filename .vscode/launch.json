@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - monkeyTrouble",
+            "request": "launch",
+            "mainClass": "monkeyTrouble"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - sleepIn",
             "request": "launch",
             "mainClass": "sleepIn"
