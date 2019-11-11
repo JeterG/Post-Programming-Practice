@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - delDel",
+            "request": "launch",
+            "mainClass": "delDel"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - startHi",
             "request": "launch",
             "mainClass": "startHi"
