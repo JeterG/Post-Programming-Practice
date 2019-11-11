@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - startHi",
+            "request": "launch",
+            "mainClass": "startHi"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - front3",
             "request": "launch",
             "mainClass": "front3",
