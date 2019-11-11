@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - startOz",
+            "request": "launch",
+            "mainClass": "startOz"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - mixStart",
             "request": "launch",
             "mainClass": "mixStart"
