@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - mixStart",
+            "request": "launch",
+            "mainClass": "mixStart"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - delDel",
             "request": "launch",
             "mainClass": "delDel"
