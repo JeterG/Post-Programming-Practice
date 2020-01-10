@@ -4,6 +4,11 @@ public class startOz{
         if(str.length()<=0){
             return str;
         }
+        if(str.length()==1){
+          if(str.charAt(0)=='o'){
+            return str;
+        }  
+        }
         String temp="";
         if(str.charAt(0)=='o'){
             temp+='o';
