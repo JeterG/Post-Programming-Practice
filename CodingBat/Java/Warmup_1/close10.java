@@ -1,0 +1,19 @@
+public class close10{
+    public static int close10(int a, int b){
+        // Given 2 int values, return whichever value is nearest to th evalue 10, or return 0 in the event of a tie. Note that Math.abs(n) returns the absolute value of a number.
+        if (Math.abs(10-a)==Math.abs(10-b)){
+            return 0;
+        }
+        if (Math.abs(10-a)<Math.abs(10-b)){
+            return a;
+        }
+        if (Math.abs(10-a)>Math.abs(10-b)){
+            return b;
+        }
+        return 0;
+        
+    }
+    public static void main(String[] args) {
+        
+    }
+}
