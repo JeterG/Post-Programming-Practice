@@ -302,8 +302,48 @@ public class String_1{
         }
     }
 
+    public static String deFront(String str) {
+        // Given a string, return a version without the first 2 chars. Except keep the first char if it is 'a' and keep the second char if it is 'b'. The string may be any length. Harder than it looks.
+        if(str.length()==0){
+            return "";
+        }
+        else if(str.length()==1){
+            if(str.charAt(0)=='a'){
+                return "a";
+            }
+            return "";
+        }
+        else if(str.length()==2){
+            if(str.charAt(0)=='a'){
+                if(str.charAt(1)=='b'){
+                    return "ab";
+                }
+                return "a";
+            }
+            else if(str.charAt(1)=='b'){
+                return "b";
+            }
+            return "";
+        }
+        else{
+
+            if(str.charAt(0)=='a'){
+                if(str.charAt(1)=='b'){
+                    return str;
+                }
+                return "a"+str.substring(2);
+            }
+            else if(str.charAt(1)=='b'){
+                return "b"+str.substring(2);
+            }
+            return str.substring(2);
+        }
+    }
+
     public static void main(String[] args) {
-        System.out.println(without2("HelloHe"));
+        System.out.println(deFront("Hello"));
+        System.out.println(deFront("away"));
+        // System.out.println(without2("HelloHe"));
         // System.out.println(extraFront("Hello"));
         // System.out.println(minCat("Hello","Hi"));
         // System.out.println(minCat("Hello","java"));
