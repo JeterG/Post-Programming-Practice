@@ -97,6 +97,16 @@ public class String_1{
         return str.charAt(str.length()-1)+"";
     }
 
+    public static String withoutEnd2(String str){
+
+        // Given a string, return a version without both the first and last char of the string. The string may be any length, including 0.
+
+        if(str.length()<=2){
+            return "";
+        }
+        return str.substring(1,str.length()-1);
+    }
+
     public static void main(String[] args) {
         System.out.println(helloName("Jeter"));
         System.out.println(makeAbba("Hi","Bye"));
@@ -112,5 +122,6 @@ public class String_1{
         System.out.println(right2("Hello"));
         System.out.println(theEnd("Hello",true));
         System.out.println(theEnd("Hello",false));
+        System.out.println(withoutEnd2("Hello"));
     }
 }
