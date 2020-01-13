@@ -154,10 +154,26 @@ public class String_1{
             return str.substring(length-2,length+1);
                               
         }
+    }
 
+    public static boolean hasBad(String str) {
+        // Given a string, return true if "bad" appears starting at index 0 or 1 in the string, such as with "badxxx" or 
+        if(str.length()<=2){
+            return false;
+        }
+        else if (str.length()==3){
+            if (str.equals("bad")){
+                return true;
+            }
+            return false;
+        }
+        else{
+            return (str.substring(0,3).equals("bad")||str.substring(1,4).equals("bad"));
+        }
     }
 
     public static void main(String[] args) {
+        System.out.println(hasBad("xbadxx"));
         System.out.println(middleThree("Candy"));
         System.out.println(helloName("Jeter"));
         System.out.println(makeAbba("Hi","Bye"));
