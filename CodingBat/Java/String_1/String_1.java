@@ -254,12 +254,20 @@ public class String_1{
             }
             return "";
         }
-        
+    }
+
+    public static boolean frontAgain(String str) {
+        // Given a string, return true if the first 2 chars in the string also appear at the end of the string, such as with "edited".
+        if(str.length()<=1){
+            return false;
+        }
+        return(str.substring(0,2).equals(str.substring(str.length()-2)));
     }
 
     public static void main(String[] args) {
-        System.out.println(seeColor("bluexx"));
-        System.out.println(lastTwo("coding"));
+        System.out.println(frontAgain("edited"));
+        // System.out.println(seeColor("bluexx"));
+        // System.out.println(lastTwo("coding"));
         // System.out.println(conCat("abc","cat"));
         // System.out.println(lastChars("last","chars"));
         // System.out.println(lastChars("hi",""));
