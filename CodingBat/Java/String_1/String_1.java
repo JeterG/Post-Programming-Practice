@@ -142,7 +142,23 @@ public class String_1{
         return str.substring(index,index+2);
     }
 
+    public static String middleThree(String str) {
+
+        // Given a string of odd length, return the string length 3 from its middle, so "Candy" yields "and". The string length will be at least 3.
+
+        if (str.length()<=3){
+            return str;
+        }
+        else{
+            int length=(str.length()+1)/2;
+            return str.substring(length-2,length+1);
+                              
+        }
+
+    }
+
     public static void main(String[] args) {
+        System.out.println(middleThree("Candy"));
         System.out.println(helloName("Jeter"));
         System.out.println(makeAbba("Hi","Bye"));
         System.out.println(makeTags("i","Yay"));
