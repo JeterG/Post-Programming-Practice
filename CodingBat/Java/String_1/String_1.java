@@ -89,6 +89,14 @@ public class String_1{
         return str.substring(str.length()-2)+str.substring(0,str.length()-2);
     }
 
+    public static String theEnd(String str, boolean front){
+        // Given a string, return a string length 1 from its front, unless front is false, in which case return a string length 1 from its back. The string will be non-empty.
+        if(front==true){
+            return str.charAt(0)+"";
+        }
+        return str.charAt(str.length()-1)+"";
+    }
+
     public static void main(String[] args) {
         System.out.println(helloName("Jeter"));
         System.out.println(makeAbba("Hi","Bye"));
@@ -102,5 +110,7 @@ public class String_1{
         System.out.println(nonStart("Hello","There"));
         System.out.println(left2("Hello"));
         System.out.println(right2("Hello"));
+        System.out.println(theEnd("Hello",true));
+        System.out.println(theEnd("Hello",false));
     }
 }
