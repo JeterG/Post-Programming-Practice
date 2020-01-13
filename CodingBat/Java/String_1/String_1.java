@@ -112,6 +112,18 @@ public class String_1{
         return str.substring((str.length()-1)/2,((str.length()-1)/2)+2);
     }
 
+
+    public static boolean endsLy(String str) {
+        // Given a string, return true if it ends in "ly".
+        if (str.length()<=1){
+            return false;
+        }
+        else if(str.length()==2){
+            return str.equals("ly");
+        }
+        return str.substring(str.length()-2).equals("ly");
+    }
+
     public static void main(String[] args) {
         System.out.println(helloName("Jeter"));
         System.out.println(makeAbba("Hi","Bye"));
@@ -129,5 +141,6 @@ public class String_1{
         System.out.println(theEnd("Hello",false));
         System.out.println(withoutEnd2("Hello"));
         System.out.println(middleTwo("string"));
+        System.out.println(endsLy("oddly"));
     }
 }
