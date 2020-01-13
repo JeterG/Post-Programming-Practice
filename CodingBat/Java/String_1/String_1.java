@@ -43,6 +43,14 @@ public class String_1{
         }
     }
 
+    public static String firstHalf(String str){
+
+        // Given a string of even length, return the first half. So the string "WooHoo" yields "Woo".
+
+        return str.substring(0,str.length()/2);
+
+    }
+
     public static void main(String[] args) {
         System.out.println(helloName("Jeter"));
         System.out.println(makeAbba("Hi","Bye"));
@@ -50,5 +58,6 @@ public class String_1{
         System.out.println(makeOutWord("<<>>","Yay"));
         System.out.println(extraEnd("Hello"));
         System.out.println(firstTwo("Hello"));
+        System.out.println(firstHalf("WooHoo"));
     }
 }
