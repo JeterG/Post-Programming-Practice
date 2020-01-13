@@ -286,8 +286,25 @@ public class String_1{
         }
     }
 
+    public static String without2(String str) {
+        // Given a string, if a length 2 substring appears at both its beginning and end, return a string without the substring at the beginning, so "HelloHe" yields "lloHe". The substring may overlap with itself, so "Hi" yields "". Otherwise, return the original string unchanged.
+        if (str.length()<=1){
+            return str;
+        }
+        else if(str.length()==2){
+            return "";
+        }
+        else{
+            if (str.substring(0,2).equals(str.substring(str.length()-2))){
+                return str.substring(2);
+            }
+            return str;
+        }
+    }
+
     public static void main(String[] args) {
-        System.out.println(extraFront("Hello"));
+        System.out.println(without2("HelloHe"));
+        // System.out.println(extraFront("Hello"));
         // System.out.println(minCat("Hello","Hi"));
         // System.out.println(minCat("Hello","java"));
         // System.out.println(frontAgain("edited"));
