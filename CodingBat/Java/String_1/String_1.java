@@ -107,6 +107,11 @@ public class String_1{
         return str.substring(1,str.length()-1);
     }
 
+    public static String middleTwo(String str){
+        // Given a string of even length, return a string made of the middle two chars, so the string "string" yields "ri". The string length will be at least 2.
+        return str.substring((str.length()-1)/2,((str.length()-1)/2)+2);
+    }
+
     public static void main(String[] args) {
         System.out.println(helloName("Jeter"));
         System.out.println(makeAbba("Hi","Bye"));
@@ -123,5 +128,6 @@ public class String_1{
         System.out.println(theEnd("Hello",true));
         System.out.println(theEnd("Hello",false));
         System.out.println(withoutEnd2("Hello"));
+        System.out.println(middleTwo("string"));
     }
 }
