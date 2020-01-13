@@ -74,6 +74,11 @@ public class String_1{
         return a+b+a;
     }
 
+    public static String nonStart(String a, String b){
+        // Given 2 strings, return their concatenation, except omit the first char of each. The strings will be at least length 1.
+        return a.substring(1)+b.substring(1);
+    }
+
     public static void main(String[] args) {
         System.out.println(helloName("Jeter"));
         System.out.println(makeAbba("Hi","Bye"));
@@ -84,5 +89,6 @@ public class String_1{
         System.out.println(firstHalf("WooHoo"));
         System.out.println(withoutEnd("Hello"));
         System.out.println(comboString("Hello","hi"));
+        System.out.println(nonStart("Hello","There"));
     }
 }
