@@ -124,6 +124,14 @@ public class String_1{
         return str.substring(str.length()-2).equals("ly");
     }
 
+    public static String nTwice(String str, int n) {
+
+        // Given a string and an int n, return a string made of the first and last n chars from the string. The string length will be at least n.
+        
+        return str.substring(0,n)+str.substring(str.length()-n);
+        
+    }
+
     public static void main(String[] args) {
         System.out.println(helloName("Jeter"));
         System.out.println(makeAbba("Hi","Bye"));
@@ -142,5 +150,6 @@ public class String_1{
         System.out.println(withoutEnd2("Hello"));
         System.out.println(middleTwo("string"));
         System.out.println(endsLy("oddly"));
+        System.out.println(nTwice("Chocolate",3));
     }
 }
