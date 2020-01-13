@@ -234,7 +234,31 @@ public class String_1{
         }
     }
 
+    public static String seeColor(String str) {
+        // Given a string, if the string begins with "red" or "blue" return that color string, otherwise return the empty string.
+        if(str.length()<=2){
+            return "";
+        }
+        else if(str.length()==3){
+            if(str.equals("red")){
+                return str;
+            }
+            return "";
+        }
+        else{
+            if(str.substring(0,3).equals("red")){
+                return "red";
+            }
+            else if(str.substring(0,4).equals("blue")){
+                return "blue";
+            }
+            return "";
+        }
+        
+    }
+
     public static void main(String[] args) {
+        System.out.println(seeColor("bluexx"));
         System.out.println(lastTwo("coding"));
         // System.out.println(conCat("abc","cat"));
         // System.out.println(lastChars("last","chars"));
