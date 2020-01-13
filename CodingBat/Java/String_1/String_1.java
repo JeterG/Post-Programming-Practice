@@ -172,32 +172,47 @@ public class String_1{
         }
     }
 
+    public static String atFirst(String str) {
+        // Given a string, return a string length 2 made of its first 2 chars. If the string length is less than 2, use '@' for the missing chars.
+        if(str.length()==0){
+            return "@@";
+        }
+        else if(str.length()==1){
+            return str+"@";
+        }
+        else if(str.length()==2){
+            return str;
+        }
+        else{
+            return str.substring(0,2);
+        }
+        
+    }
+
     public static void main(String[] args) {
-        System.out.println(hasBad("xbadxx"));
-        System.out.println(middleThree("Candy"));
-        System.out.println(helloName("Jeter"));
-        System.out.println(makeAbba("Hi","Bye"));
-        System.out.println(makeTags("i","Yay"));
-        System.out.println(makeOutWord("<<>>","Yay"));
-        System.out.println(extraEnd("Hello"));
-        System.out.println(firstTwo("Hello"));
-        System.out.println(firstHalf("WooHoo"));
-        System.out.println(withoutEnd("Hello"));
-        System.out.println(comboString("Hello","hi"));
-        System.out.println(nonStart("Hello","There"));
-        System.out.println(left2("Hello"));
-        System.out.println(right2("Hello"));
-        System.out.println(theEnd("Hello",true));
-        System.out.println(theEnd("Hello",false));
-        System.out.println(withoutEnd2("Hello"));
-        System.out.println(middleTwo("string"));
-        System.out.println(endsLy("oddly"));
-        System.out.println(nTwice("Chocolate",3));
-        System.out.println(twoChar("java",0));
-        System.out.println(twoChar("java",2));
-        System.out.println(twoChar("java",3));
-
-
-
+        System.out.println(atFirst("h"));
+        // System.out.println(hasBad("xbadxx"));
+        // System.out.println(middleThree("Candy"));
+        // System.out.println(helloName("Jeter"));
+        // System.out.println(makeAbba("Hi","Bye"));
+        // System.out.println(makeTags("i","Yay"));
+        // System.out.println(makeOutWord("<<>>","Yay"));
+        // System.out.println(extraEnd("Hello"));
+        // System.out.println(firstTwo("Hello"));
+        // System.out.println(firstHalf("WooHoo"));
+        // System.out.println(withoutEnd("Hello"));
+        // System.out.println(comboString("Hello","hi"));
+        // System.out.println(nonStart("Hello","There"));
+        // System.out.println(left2("Hello"));
+        // System.out.println(right2("Hello"));
+        // System.out.println(theEnd("Hello",true));
+        // System.out.println(theEnd("Hello",false));
+        // System.out.println(withoutEnd2("Hello"));
+        // System.out.println(middleTwo("string"));
+        // System.out.println(endsLy("oddly"));
+        // System.out.println(nTwice("Chocolate",3));
+        // System.out.println(twoChar("java",0));
+        // System.out.println(twoChar("java",2));
+        // System.out.println(twoChar("java",3));
     }
 }
