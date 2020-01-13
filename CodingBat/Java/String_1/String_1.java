@@ -132,6 +132,16 @@ public class String_1{
         
     }
 
+
+    public static String twoChar(String str, int index){
+        // Given a string and an index, return a string length 2 starting at the given index. If the index is too big or too small to define a string length 2, use the first 2 chars. The string length will be at least 2.
+
+        if (((index+1)>=str.length())||index<0){
+            return str.substring(0,2);
+        }
+        return str.substring(index,index+2);
+    }
+
     public static void main(String[] args) {
         System.out.println(helloName("Jeter"));
         System.out.println(makeAbba("Hi","Bye"));
@@ -151,5 +161,11 @@ public class String_1{
         System.out.println(middleTwo("string"));
         System.out.println(endsLy("oddly"));
         System.out.println(nTwice("Chocolate",3));
+        System.out.println(twoChar("java",0));
+        System.out.println(twoChar("java",2));
+        System.out.println(twoChar("java",3));
+
+
+
     }
 }
