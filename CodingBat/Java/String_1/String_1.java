@@ -51,6 +51,20 @@ public class String_1{
 
     }
 
+
+    public static String withoutEnd(String str){
+
+        // Given a string, return a version without the first and last char, so "Hello" yields "ell". The string length will be at least 2.
+
+        if (str.length()<=2){
+            return "";
+        }
+        else{
+            return str.substring(1,str.length()-1);
+        }
+
+    }
+
     public static void main(String[] args) {
         System.out.println(helloName("Jeter"));
         System.out.println(makeAbba("Hi","Bye"));
@@ -59,5 +73,6 @@ public class String_1{
         System.out.println(extraEnd("Hello"));
         System.out.println(firstTwo("Hello"));
         System.out.println(firstHalf("WooHoo"));
+        System.out.println(withoutEnd("Hello"));
     }
 }
