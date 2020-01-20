@@ -360,10 +360,53 @@ public class String_1{
        }
     }
 
+    public static String withoutX(String str) {
+        // Given a string, if the first or last chars are 'x', return the string without those 'x' chars, and otherwise return the string unchanged.
+        if(str.length()==0){
+            return "";
+        }
+        else if(str.length()==1){
+            if (str.equals("x")){
+                return "";
+            }
+            return str;
+        }
+        else if(str.length()==2){
+            if(str.charAt(0)=='x'){
+                if(str.charAt(1)=='x'){
+                    return "";
+                }
+                return str.substring(1);
+            }
+            if(str.charAt(1)=='x'){
+                if(str.charAt(0)=='x'){
+                    return "";
+                }
+                return str.substring(0,1);
+            }
+        }
+        else{
+            if(str.charAt(0)=='x'){
+                if(str.charAt(str.length()-1)=='x'){
+                    return str.substring(1,str.length()-1);
+                }
+                return str.substring(1);
+            }
+            if(str.charAt(str.length()-1)=='x'){
+                if(str.charAt(0)=='x'){
+                    return str.substring(1,str.length()-1);
+                }
+                return str.substring(0,str.length()-1);
+            }
+        }
+        return str;
+    }
+
     public static void main(String[] args) {
-        System.out.println(startWord("hippo","hi"));
-        System.out.println(startWord("hippo","xip"));
-        System.out.println(startWord("hippo","i"));
+        System.out.println(withoutX("Hxix"));
+        // System.out.println(startWord("hippo","hi"));
+        // System.out.println(startWord("hippo","xip"));
+        // System.out.println(startWord("hippo","i"));
         // System.out.println(deFront("Hello"));
         // System.out.println(deFront("away"));
         // System.out.println(without2("HelloHe"));
