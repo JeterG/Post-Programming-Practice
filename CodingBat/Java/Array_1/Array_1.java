@@ -14,9 +14,13 @@ public class Array_1{
         }
         return (nums[0]==nums[nums.length-1]);
     }
+    public static int[] makePi(){
+        return new int[] {3,1,4};
+    }
     public static void main(String[] args) {
         int[] a= new int[]{1,2,1};
         System.out.println(firstLast6(a));
         System.out.println(sameFirstLast(a));
+        System.out.println(makePi());
     }
 }
