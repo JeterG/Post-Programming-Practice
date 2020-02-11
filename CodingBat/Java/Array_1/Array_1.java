@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Array_1{
     public static boolean firstLast6(int[] nums) {
         // Given an array of ints, return true if 6 appears as either the first or last element in the array. The array will be length 1 or more.
@@ -36,11 +38,27 @@ public class Array_1{
         // Given an array of ints lenght 3 return an arry with the elements "rotated left" so {1,2,3} yields {2,3,1}
         return new int [] {nums[1],nums[2],nums[0]};
     }
+    public static int[] reverse3(int[] nums){
+        // Given an array of ints length 3, return a new array with the elements in reverse order.
+        return new int[] {nums[2], nums[1],nums[0]};
+    }
+    public static int[] maxEnd3(int[] nums){
+        // Given an array of ints length 3, figure out which is larger, the first or last element in the array, and set all the other elements to be that value, return the changed array.
+        if(nums[0]>nums[2]){
+            return new int[] {nums[0], nums[0], nums[0]};
+        }
+        else if(nums[2]>nums[0]){
+            return new int[] {nums[2], nums[2], nums[2]};
+        }
+        return new int[] {nums[0], nums[0], nums[0]};
+    } 
     public static void main(String[] args) {
-        int[] a= new int[]{1,2,1};
+        int[] a= new int[]{1,2,3};
         System.out.println(firstLast6(a));
         System.out.println(sameFirstLast(a));
-        System.out.println(makePi());
+        System.out.println(Arrays.toString(makePi()));
         System.out.println(commonEnd(a,a));
+        System.out.println(Arrays.toString(reverse3(a)));
+        System.out.println(Arrays.toString(a));
     }
 }
