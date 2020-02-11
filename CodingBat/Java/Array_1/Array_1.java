@@ -32,6 +32,10 @@ public class Array_1{
         // Given an arrya of ints length 3, return the sum of all the elements.
         return nums[0]+nums[1]+nums[2];
     }
+    public static int[] rotateLeft3(int[]nums){
+        // Given an array of ints lenght 3 return an arry with the elements "rotated left" so {1,2,3} yields {2,3,1}
+        return new int [] {nums[1],nums[2],nums[0]};
+    }
     public static void main(String[] args) {
         int[] a= new int[]{1,2,1};
         System.out.println(firstLast6(a));
