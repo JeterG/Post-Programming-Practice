@@ -17,10 +17,22 @@ public class Array_1{
     public static int[] makePi(){
         return new int[] {3,1,4};
     }
+    public static boolean commonEnd(int[] a, int[] b){
+    // Given 2 arrays of ints, a and b, return true if they have the same first element or they have the same last element. Both arrays will be length 1 or more.
+    // return (a[0]==b[0]) or (a[a.length-1]==b[b.length-1]);
+        if (a[0]==b[0]){
+            return true;
+        }
+        else if(a[a.length-1]==b[b.length-1]){
+            return true;
+        }
+        return false;
+    }
     public static void main(String[] args) {
         int[] a= new int[]{1,2,1};
         System.out.println(firstLast6(a));
         System.out.println(sameFirstLast(a));
         System.out.println(makePi());
+        System.out.println(commonEnd(a,a));
     }
 }
