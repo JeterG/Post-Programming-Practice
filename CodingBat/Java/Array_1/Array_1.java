@@ -74,6 +74,17 @@ public class Array_1{
         // Given an int array length 2, return true if it contians a 2 or a 3.
         return (nums[0]==2)||(nums[0]==3)||(nums[1]==2)||(nums[1]==3);
     }
+    public static boolean no23(int[] nums){
+        // Given an int array length 2, return true if it does not contain a 2 or a 3.
+        return (nums[0]!=2)&&(nums[0]!=3)&&(nums[1]!=2)&&(nums[1]!=3);
+    }
+    public static int[] makeLast(int[] nums){
+        // Given an int array, return a new array with double the length where its last element is the same as the original array, and all the othe relements are 0. The original array will be leenght 1 or more. Note: by default all new int array contains all 0's;
+        int[] f= new int[nums.length*2];
+        f[f.length-1]=nums[nums.length-1];
+        return f;
+
+    }
     public static void main(String[] args) {
         int[] a= new int[]{1,2,3};
         System.out.println(firstLast6(a));
