@@ -70,6 +70,10 @@ public class Array_1{
         // Given an array of ints, return a new array length 2 containing the first and last elements from the original array. The original array will be length 1 or more.
         return new int[]{nums[0],nums[nums.length-1]};
     }
+    public static boolean has23(int[] nums){
+        // Given an int array length 2, return true if it contians a 2 or a 3.
+        return (nums[0]==2)||(nums[0]==3)||(nums[1]==2)||(nums[1]==3);
+    }
     public static void main(String[] args) {
         int[] a= new int[]{1,2,3};
         System.out.println(firstLast6(a));
