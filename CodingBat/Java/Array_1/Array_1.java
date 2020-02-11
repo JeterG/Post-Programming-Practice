@@ -62,6 +62,10 @@ public class Array_1{
         }
         return nums[0]+nums[1];
     }
+    public static int[] middleWay(int[] a, int[] b){
+        // Given 2 int arrays, a and b, each length 3, return a new array length 2 containing their middle elements.
+        return new int[]{a[1],b[1]};
+    }
     public static void main(String[] args) {
         int[] a= new int[]{1,2,3};
         System.out.println(firstLast6(a));
