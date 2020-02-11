@@ -28,6 +28,10 @@ public class Array_1{
         }
         return false;
     }
+    public static int sum3(int[] nums){
+        // Given an arrya of ints length 3, return the sum of all the elements.
+        return nums[0]+nums[1]+nums[2];
+    }
     public static void main(String[] args) {
         int[] a= new int[]{1,2,1};
         System.out.println(firstLast6(a));
