@@ -85,6 +85,114 @@ public class Array_1{
         return f;
 
     }
+
+
+    public static boolean double23(int[] nums) {
+        // Given an int array, return true if the array contains 2 twice, or 3 twice. The array will be length 0, 1, or 2.
+        if(nums.length<2){
+                  return false;
+              } 
+              else{
+                  if(nums[0]==nums[1]){
+                      return (nums[0]==2||nums[0]==3);
+                  }
+                  return false;
+              }
+      }
+      
+
+    public static int[] fix23(int[] nums) {
+        // Given an int array length 3, if there is a 2 in the array immediately followed by a 3, set the 3 element to 0. Return the changed array.
+        for (int i=0; i<2;i++){
+                  if((nums[i]==2)&&(nums[i+1]==3))
+                  {
+                      nums[i+1]=0;
+                  }
+              }
+              return nums;
+      }
+
+    public static int start1(int[] a, int[] b) {
+        // Start with 2 int arrays, a and b, of any length. Return how many of the arrays have 1 as their first element.
+        if((a.length==0)&&(b.length==0))
+                {
+                    return 0;
+                }
+                else if(a.length==0){
+                    if(b[0]==1){
+                        return 1;
+                    }
+                    return 0;
+                }
+                else if(b.length==0){
+                    if(a[0]==1){
+                        return 1;
+                    }
+                    return 0;
+                }
+                else{
+                    if((b[0]==1)&&(a[0]==1)){
+                        return 2;
+                    }
+                    if((b[0]==1)||(a[0]==1)){
+                        return 1;
+                    }
+                    return 0;
+                }
+        }
+
+    public static int[] biggerTwo(int[] a, int[] b) {
+
+    // Start with 2 int arrays, a and b, each length 2. Consider the sum of the values in each array. Return the array which has the largest sum. In event of a tie, return a.
+        if((a[0]+a[1])>(b[0]+b[1])){
+                  return a;
+              }
+              if((a[0]+a[1])<(b[0]+b[1])){
+                  return b;
+              }
+              return a;
+      }
+
+    public static int[] makeMiddle(int[] nums) {
+        // Given an array of ints of even length, return a new array length 2 containing the middle two elements from the original array. The original array will be length 2 or more.
+
+
+        if(nums.length==2){
+                  return nums;
+              }
+              return new int[] {nums[(nums.length/2)-1],nums[nums.length/2]};
+      }
+      
+    
+    public static int[] plusTwo(int[] a, int[] b) {
+        // Given 2 int arrays, each length 2, return a new array length 4 containing all their elements.
+        return new int[] {a[0],a[1],b[0],b[1]};
+    }
+
+    
+    public static  int[] swapEnds(int[] nums) {
+
+    // Given an array of ints, swap the first and last elements in the array. Return the modified array. The array length will be at least 1.
+        if(nums.length==1){
+                  return nums;
+              }
+              int temp=nums[0];
+              nums[0]=nums[nums.length-1];
+              nums[nums.length-1]=temp;
+              return nums;
+      }
+      
+
+    public static int[] midThree(int[] nums){
+
+    // Given an array of ints of odd length, return a new array length 3 containing the elements from the middle of the array. The array length will be at least 3.
+
+        if (nums.length==3){
+            return nums;
+        }
+        int mid=(nums.length-1)/2;
+        return new int[]{nums[mid-1],nums[mid],nums[mid+1]};
+    }
     public static void main(String[] args) {
         int[] a= new int[]{1,2,3};
         System.out.println(firstLast6(a));
