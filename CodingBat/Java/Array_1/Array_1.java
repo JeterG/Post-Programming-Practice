@@ -193,6 +193,22 @@ public class Array_1{
         int mid=(nums.length-1)/2;
         return new int[]{nums[mid-1],nums[mid],nums[mid+1]};
     }
+
+    public static int maxTriple(int[] nums){
+        // Given an array of ints of odd length, look at the first, last, and middle values in the array and return the largest. The array length   will be a least 1.
+        int first=nums[0];
+        int last=nums[nums.length-1];
+        int mid=nums[(nums.length/2)];
+        if (first>mid&&first>last){
+            return first;
+        }
+        if (mid>first&&mid>last){
+            return mid;
+        }
+            else{
+                return last;
+            }
+    }
     public static void main(String[] args) {
         int[] a= new int[]{1,2,3};
         System.out.println(firstLast6(a));
@@ -201,5 +217,6 @@ public class Array_1{
         System.out.println(commonEnd(a,a));
         System.out.println(Arrays.toString(reverse3(a)));
         System.out.println(Arrays.toString(a));
+        System.out.println(maxTriple(a));
     }
 }
