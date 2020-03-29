@@ -209,6 +209,17 @@ public class Array_1{
                 return last;
             }
     }
+
+    public static int[] frontPiece(int[] nums) {
+        // Given an int array of any length, return a new array of its first 2 elements. If the array is smaller than length 2, use whatever elemnts are present.
+        if(nums.length<=2){
+            return nums;
+        }
+        else{
+            return new int[]{nums[0],nums[1]};
+        }
+        
+    }
     public static void main(String[] args) {
         int[] a= new int[]{1,2,3};
         System.out.println(firstLast6(a));
