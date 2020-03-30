@@ -69,6 +69,15 @@ public class Logic_1{
             return 2;
         }
     }
+
+    public static int sortaSum(int a, int b){
+        // Given 2 ints, a and b, return their sum. However, sums in the range 10..19 inclusive, are forbidden, so in this case just return 20.
+        int sum=a+b;
+        if(sum>=10&&sum<=19){
+            return 20;
+        }
+        return sum;
+    }
     public static void main(String[] args) {
         System.out.println("Test");
     }
