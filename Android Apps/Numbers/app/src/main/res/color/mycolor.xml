@@ -9,7 +9,7 @@
         android:color="#4aa5d4"  />
     <item
 
-        android:state_pressed="true"
+        android:state_selected="false"
         android:color="#D70E0E"  />
 
     <item
