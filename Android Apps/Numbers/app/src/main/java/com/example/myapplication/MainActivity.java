@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         mylistview.setAdapter(adapter);
 //Items should be removed if they are equal, or add to 10, and there has to be a clear path between the items.
+        // use the on click to update 2 global variables that will be place holders for the numbers to compare.
         mylistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
