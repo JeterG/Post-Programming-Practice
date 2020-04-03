@@ -115,7 +115,21 @@ public class Logic_1{
         else{
             return (n<=1||n>=10);
         }
+    }
 
+    public static boolean specialEleven(int n){
+        // We'll say a number is special if it is a multiple of 11 or if it is one more than a multiple of 11. Return true if the given non-negative number is special. Use the % "mod" operator
+        return ((n%11)==0)||((n%11)==1);
+    }
+
+    public static boolean more20(int n){
+        // Return true if the given non-negative number is 1 or 2 more than a multiple of 20
+        return(n%20<=2)&&(n%20>0);
+    }
+
+    public static boolean old35(int n){
+        // Return true if the given non-negative number is a multiple of 3 or 5, but not both. Use the % "mod" operator
+        return((n%3==0)||(n%5==0))&&(!((n%3==0)&&(n%5==0)));
     }
     public static void main(String[] args) {
         System.out.println("Test");
