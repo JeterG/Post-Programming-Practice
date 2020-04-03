@@ -131,6 +131,26 @@ public class Logic_1{
         // Return true if the given non-negative number is a multiple of 3 or 5, but not both. Use the % "mod" operator
         return((n%3==0)||(n%5==0))&&(!((n%3==0)&&(n%5==0)));
     }
+
+    public static boolean less20(int n){
+        // Return true if the given non-negative number is 1 or 2 less than a multiple of 20. So for example 38 and 39 return true, but 40 returns false.
+        return ((20-(n%20))<=2)&&((20-(n%20))>0);
+    }
+
+    public static boolean nearTen(int num){
+        // Given a non-negative number "num", return true if num is within 2 of a multiple of 10. Note: (a % b) is the remainder of dividing a by b, so (7 % 5) is 2.
+        return ((10-(num%10))<=2)&&((10-(num%10))>0)||(num%10<=2);
+
+    }
+
+    public static int teenSum(int a, int b){
+        // Given 2 ints, a and b, return their sum. However, "teen" values in the range 13..19 inclusive, are extra lucky. So if either value is a teen, just return 19.
+        int sum=a+b;
+        if((13<=a&&a<=19)||(13<=b&&b<=19)){
+            return 19;
+        }
+        return sum;
+    }
     public static void main(String[] args) {
         System.out.println("Test");
     }
