@@ -151,6 +151,145 @@ public class Logic_1{
         }
         return sum;
     }
+
+    public static boolean answerCell(boolean isMorning, boolean isMom,boolean isAsleep){
+        // Your cell phone rings. Return true if you should answer it. Normally you answer, except in the morning you only answer if it is your mom calling. In all cases, if you are asleep, you do not answer.
+        if(isAsleep){
+            return false;
+        }
+        else if(isMom && isMorning){
+            return true;
+        }
+        else if(isMorning){
+            return false;
+        }
+        else{
+            return true;
+        }
+
+    }
+
+    public static int teaParty(int tea, int candy){
+        // We are having a party with amounts of tea and candy. Return the int outcome of the party encoded as 0=bad, 1=good, or 2=great. A party is good (1) if both tea and candy are at least 5. However, if either tea or candy is at least double the amount of the other one, the party is great (2). However, in all cases, if either tea or candy is less than 5, the party is always bad (0).
+        
+        if(tea<5||candy<5){
+            return 0;
+        }
+        else if(tea>=2*candy||candy>=tea*2){
+            return 2;
+        }
+        else{
+            return 1;
+        }
+        
+    }
+
+    public static String fizzString(String str){
+        // Given a string str, if the string starts with "f" return "Fizz". If the string ends with "b" return "Buzz". If both the "f" and "b" conditions are true, return "FizzBuzz". In all other cases, return the string unchanged.
+        if(str.charAt(0)=='f'&&str.charAt(str.length()-1)=='b'){
+            return "FizzBuzz";
+        }
+        else if(str.charAt(str.length()-1)=='b'){
+            return "Buzz";
+        }
+        else if(str.charAt(0)=='f'){
+            return "Fizz";
+        }
+        else{
+            return str;
+        }
+    }
+
+    public String fizzString2(int n){
+        // Given an int n, return the string form of the number followed by "!". So the int 6 yields "6!". Except if the number is divisible by 3 use "Fizz" instead of the number, and if the number is divisible by 5 use "Buzz", and if divisible by both 3 and 5, use "FizzBuzz". Note: the % "mod" operator computes the remainder after division, so 23 % 10 yields 3. What will the remainder be when one number divides evenly into another?
+        if(n%3==0&&n%5==0){
+            return "FizzBuzz!";
+        }
+        else if(n%3==0){
+            return "Fizz!";
+        }
+        else if(n%5==0){
+            return "Buzz!";
+        }
+        else{
+            return n+"!";
+        }
+    }    
+    public static boolean twoAsOne(int a, int b, int c){
+        // Given three ints, a b c, return true if it is possible to add two of the ints to get the third.
+        return(a+b==c)||(a+c==b)||(b+c==a);
+    }
+
+    public static boolean inOrder(int a, int b, int c, boolean bOk){
+        // Given three ints, a b c, return true if b is greater than a, and c is greater than b. However, with the exception that if "bOk" is true, b does not need to be greater than a.
+        if(bOk){
+            return c>b;
+        }
+        return c>b&&b>a;
+    }
+
+    public static boolean inOrderEqual(int a, int b, int c, boolean equalOk){
+        // Given three ints, a b c, return true if they are in strict increasing order, such as 2 5 11, or 5 6 7, but not 6 5 7 or 5 5 7. However, with the exception that if "equalOk" is true, equality is allowed, such as 5 5 7 or 5 5 5.
+        if(equalOk){
+            return (a<b&&b<c)||(a==b&&b<c)||(a==b&&b==c)||(a<b&&b==c);
+        }
+        return a<b&&b<c;
+    }
+
+    public static boolean lastDigit(int a, int b, int c){
+        // Given three ints, a b c, return true if two or more of them have the same rightmost digit. The ints are non-negative. Note: the % "mod" operator computes the remainder, e.g. 17 % 10 is 7.
+        return (a%10==b%10)||(b%10==c%10)||(a%10==c%10);
+    }
+
+    public static boolean lessBy10(int a, int b, int c){
+        // Given three ints, a b c, return true if one of them is 10 or more less than one of the others.
+        return (Math.abs(a-b)>=10)||(Math.abs(a-c)>=10)||(Math.abs(b-c)>=10);
+    }
+
+    public static int withoutDoubles(int die1, int die2, boolean  noDoubles){
+        // Return the sum of two 6-sided dice rolls, each in the range 1..6. However, if noDoubles is true, if the two dice show the same value, increment one die to the next value, wrapping around to 1 if its value was 6.
+        if(noDoubles){
+            if(die1==die2){
+                if(die1==6){
+                    return 7;
+                }
+                return die1*2+1;
+            }
+        }
+        return die1+die2;
+    }
+
+    public static int maxMod5(int a, int b){
+        // Given two int values, return whichever value is larger. However if the two values have the same remainder when divided by 5, then the return the smaller value. However, in all cases, if the two values are the same, return 0. Note: the % "mod" operator computes the remainder, e.g. 7 % 5 is 2.
+        if(a==b){
+            return 0;
+        }
+        if(a%5==b%5){
+            if(a<b){
+                return a;
+            }
+            return b;
+        }
+        if(a<b){
+            return b;
+        }
+        return a;
+
+    }
+
+    public static int redTicket(int a, int b, int c){
+        // You have a red lottery ticket showing ints a, b, and c, each of which is 0, 1, or 2. If they are all the value 2, the result is 10. Otherwise if they are all the same, the result is 5. Otherwise so long as both b and c are different from a, the result is 1. Otherwise the result is 0.
+        if(a==2&&a==b&&b==c){
+            return 10;
+        }
+        if(((a==0)||(a==1))&&a==b&&b==c){
+            return 5;
+        }
+        if(a!=b&&c!=a){
+            return 1;
+        }
+        return 0;
+    }
     public static void main(String[] args) {
         System.out.println("Test");
     }
