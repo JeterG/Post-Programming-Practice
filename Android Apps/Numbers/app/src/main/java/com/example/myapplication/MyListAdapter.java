@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.graphics.Color;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -13,6 +14,11 @@ import java.util.Collections;
 public class MyListAdapter extends BaseAdapter {
 
     private ArrayList<String> myarray;
+    private View comp1=null;
+    private View comp2=null;
+    private int position1;
+    private int position2;
+
 
     public MyListAdapter(ArrayList<String> myarray) {
         this.myarray = myarray;
@@ -21,6 +27,20 @@ public class MyListAdapter extends BaseAdapter {
     public void addItem(String entry){
         myarray.add(entry);
 
+    }
+
+    public void compare(View view,int position,long id){
+        if (comp1==null){
+            comp1=view;
+            position1=position;
+        }
+        else if(comp2==null){
+            comp2=view;
+            position2=position;
+        }
+        else{
+            Log.d("compare",""+(getItem(position1)==getItem(position2)));
+        }
     }
 
     public void updateItem(int position,String entry){

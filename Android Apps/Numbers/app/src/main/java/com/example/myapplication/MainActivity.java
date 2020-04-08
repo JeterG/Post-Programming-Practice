@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
 //                TextView view1= (TextView) adapter.getView(position,mylistview,null);
 //                view1.setBackgroundColor(1);
                 adapter.updateItem(position,"");
+                adapter.compare(view,position,id);
                 view.requestFocus();
 //                view.
 //                adapter.removeItem(position);
