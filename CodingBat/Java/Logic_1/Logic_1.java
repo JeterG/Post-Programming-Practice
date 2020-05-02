@@ -290,7 +290,49 @@ public class Logic_1{
         }
         return 0;
     }
+    public static int greenTicket(int a, int b, int c){
+        // You have a green lottery ticket, with ints a, b, and c on it. If the numbers are all different from each other, the result is 0. If all of the numbers are the same, the result is 20. If two of the numbers are the same, the result is 10.
+        if((a==b)&&(b==c)){
+            return 20;
+        }
+        if((a==b)||(b==c)||(a==c)){
+            return 10;
+        }
+        return 0;
+    }
+
+    public static int blueTicket(int a, int b, int c){
+        // You have a blue lottery ticket, with ints a, b, and c on it. This makes three pairs, which we'll call ab, bc, and ac. Consider the sum of the numbers in each pair. If any pair sums to exactly 10, the result is 10. Otherwise if the ab sum is exactly 10 more than either bc or ac sums, the result is 5. Otherwise the result is 0.
+        if((a+b==10)||(b+c==10)||(a+c==10)){
+            return 10;
+        }
+        // if(a+b==10){
+            if(((a+b)-(b+c)==10)||(((a+b)-(a+c)==10))){
+                return 5;
+            // }
+        }
+        return 0;
+    }
+    public static boolean shareDigit(int a, int b){
+        // Given two ints, each in the range 10..99, return true if there is a digit that appears in both numbers, such as the 2 in 12 and 23. (Note: division, e.g. n/10, gives the left digit while the % "mod" n%10 gives the right digit.)
+        return (a/10==b/10)||(a/10==b%10)||(a%10==b/10)||(a%10==b%10);
+
+
+    }
+
+    public static int sumLimit(int a, int b){
+        // Given 2 non-negative ints, a and b, return their sum, so long as the sum has the same number of digits as a. If the sum has more digits than a, just return a without b. (Note: one way to compute the number of digits of a non-negative int n is to convert it to a string with String.valueOf(n) and then check the length of the string.)
+      
+        if(String.valueOf(a+b).length()>String.valueOf(a).length()){
+            return a;
+        }
+        return a+b;
+    }
+
     public static void main(String[] args) {
         System.out.println("Test");
+        System.out.println(12/10);
+        System.out.println(12%10);
+        System.out.println(String.valueOf(189).length());
     }
 }
