@@ -76,7 +76,24 @@ public class Logic_2{
         return num-num%10;}
     return num-num%10+10;}
 
+    public static boolean close_far(int a, int b, int c){
+        // Given three ints, a b c, return true if one of b or c is "close" (differing from a by at most 1), while the other is "far", differing from both other values by 2 or more. Note: Math.abs(num) computes the absolute value of a number.
 
+    if (close(a,b)){
+        return (far(a,c) && far(b,c));}
+    if (close(a,c)){
+        return (far(a,b) && far(b,c));
+        }
+        return false;
+    }
+    public static boolean close(int a, int b){
+        if (Math.abs(a-b)<=1){
+            return true;}
+        return false;}
+    public static boolean far(int a,int b){
+        if (Math.abs(a-b)>=2){
+            return true;}
+        return false;}
 
         public static void main(String[] args) {
 
