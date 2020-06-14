@@ -88,6 +88,18 @@ public class String_2 {
         }
         return false;
     }
+    public boolean bobThere(String str){
+        // Return true if the given string contains a "bob" string, but where the middle 'o' char can be any char.
+        for (int i = 0; i < str.length(); i++) {
+            if (i + 2 < str.length()) {
+                if ((str.charAt(i) == 'b') && (str.charAt(i + 2) == 'b')) {
+                    return true;
+                }
+            }
+        }
+        return false;        
+
+    }
 
     public static void main(String[] args) {
         String_2 obj = new String_2();
