@@ -42,9 +42,11 @@ public class String_2 {
         return catCount == dogCount;
     }
 
-    public int countCode(String str){
-        // Return the number of times that the string "code" appears anywhere in the given string, except we'll accept any letter for the 'd', so "cope" and "cooe" count.
-        int count =0;
+    public int countCode(String str) {
+        // Return the number of times that the string "code" appears anywhere in the
+        // given string, except we'll accept any letter for the 'd', so "cope" and
+        // "cooe" count.
+        int count = 0;
         for (int i = 0; i < str.length(); i++) {
             if (i + 3 < str.length()) {
                 if ((str.charAt(i) == 'c') && (str.charAt(i + 1) == 'o') && (str.charAt(i + 3) == 'e')) {
@@ -52,23 +54,39 @@ public class String_2 {
                 }
             }
         }
-                return count;
+        return count;
     }
-    
-    public boolean endOther(String a, String b){
-        // Given two strings, return true if either of the strings appears at the very end of the other string, ignoring upper/lower case differences (in other words, the computation should not be "case sensitive"). Note: str.toLowerCase() returns the lowercase version of a string.
 
-        if(a.length()==b.length()){
+    public boolean endOther(String a, String b) {
+        // Given two strings, return true if either of the strings appears at the very
+        // end of the other string, ignoring upper/lower case differences (in other
+        // words, the computation should not be "case sensitive"). Note:
+        // str.toLowerCase() returns the lowercase version of a string.
+
+        if (a.length() == b.length()) {
             return a.toLowerCase().equals(b.toLowerCase());
+        } else if (a.length() < b.length()) {
+            return b.substring(b.length() - a.length()).toLowerCase().equals(a.toLowerCase());
+        } else {
+            return a.substring(a.length() - b.length()).toLowerCase().equals(b.toLowerCase());
         }
-        else if(a.length()<b.length()){
-            return b.substring(b.length()-a.length()).toLowerCase().equals(a.toLowerCase());
-        }
-        else{
-            return a.substring(a.length()-b.length()).toLowerCase().equals(b.toLowerCase());
-        }
+    }
 
-
+    public boolean xyzThere(String str) {
+        // Return true if the given string contains an appearance of "xyz" where the xyz
+        // is not directly preceeded by a period (.). So "xxyz" counts but "x.xyz" does
+        // not.
+        for (int i = 0; i < str.length(); i++) {
+            if ((i + 3 < str.length()) || (str.length() == 3)) {
+                if (((str.charAt(i) != '.') && (str.charAt(i + 1) == 'x') && (str.charAt(i + 2) == 'y')
+                        && (str.charAt(i + 3) == 'z'))
+                        || ((i == 0) && (str.charAt(i) == 'x') && (str.charAt(i + 1) == 'y')
+                                && (str.charAt(i + 2) == 'z'))) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public static void main(String[] args) {
@@ -77,13 +95,12 @@ public class String_2 {
         // System.out.println(obj.countHi("abc hi hi"));
         // System.out.println(obj.catDog("1cat1cadodog"));
         // System.out.println(obj.countCode("cozexxcope"));
-        System.out.println(obj.endOther("abc", "abXabc"));
+        // System.out.println(obj.endOther("abc", "abXabc"));
         // System.out.println("abXabc".length());
         // System.out.println("abc".length());
         // System.out.println("abXabc".length()-"abc".length());
         // System.out.println("abXabc".substring("abXabc".length()-"abc".length()));
-
-
+        // System.out.println(obj.xyzThere("abc.xyz"));
 
     }
 
