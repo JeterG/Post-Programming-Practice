@@ -42,12 +42,26 @@ public class String_2 {
         return catCount == dogCount;
     }
 
+    public int countCode(String str){
+        // Return the number of times that the string "code" appears anywhere in the given string, except we'll accept any letter for the 'd', so "cope" and "cooe" count.
+        int count =0;
+        for (int i = 0; i < str.length(); i++) {
+            if (i + 3 < str.length()) {
+                if ((str.charAt(i) == 'c') && (str.charAt(i + 1) == 'o') && (str.charAt(i + 3) == 'e')) {
+                    count++;
+                }
+            }
+        }
+                return count;
+
+    }
+
     public static void main(String[] args) {
         String_2 obj = new String_2();
         System.out.println(obj.doubleChar("The"));
         System.out.println(obj.countHi("abc hi hi"));
         System.out.println(obj.catDog("1cat1cadodog"));
-
+        System.out.println(obj.countCode("cozexxcope"));
     }
 
 }
