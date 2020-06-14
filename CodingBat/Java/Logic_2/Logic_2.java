@@ -94,7 +94,18 @@ public class Logic_2{
         if (Math.abs(a-b)>=2){
             return true;}
         return false;}
-
+    public static int blackjack(int a, int b){
+        // Given 2 int values greater than 0, return whichever value is nearest to 21 without going over. Return 0 if they both go over.
+        if(a<=21&&b<=21){
+            if(a>b){
+                return a;
+            }
+            return b;
+        }
+        if(a<21){return a;}
+        if(b<21){return b;}
+        return 0;
+    }
         public static void main(String[] args) {
 
             System.out.println(makeBricks(0,0,0));
