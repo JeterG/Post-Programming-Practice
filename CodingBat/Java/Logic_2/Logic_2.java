@@ -106,6 +106,14 @@ public class Logic_2{
         if(b<21){return b;}
         return 0;
     }
+
+    public static boolean evenlySpaced(int a, int b, int c){
+        // Given three ints, a b c, one of them is small, one is medium and one is large. Return true if the three values are evenly spaced, so the difference between small and medium is the same as the difference between medium and large.
+        int[ ] arr={a,b,c};
+        Arrays.sort(arr);
+        return (arr[0]-arr[1]==arr[1]-arr[2]);
+
+    }
         public static void main(String[] args) {
 
             System.out.println(makeBricks(0,0,0));
