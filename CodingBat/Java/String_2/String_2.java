@@ -121,6 +121,25 @@ public class String_2 {
         return balanced;
 
     }
+
+    public String mixString(String a, String b){
+        // Given two strings, a and b, create a bigger string made of the first char of a, the first char of b, the second char of a, the second char of b, and so on. Any leftover chars go at the end of the result.
+        int lenA=a.length();
+        int lenB=b.length();
+        String result="";
+        if(lenA>lenB){
+            for(int i =0; i<lenB;i++){
+                result=result +a.charAt(i)+b.charAt(i);
+            }
+            result=result +a.substring(lenB);
+            return result;
+        }
+        for(int i =0; i<lenA;i++){
+            result= result +a.charAt(i)+b.charAt(i);
+        }
+        result= result +b.substring(lenA);
+        return result;
+    }
     public static void main(String[] args) {
         String_2 obj = new String_2();
         // System.out.println(obj.doubleChar("The"));
@@ -133,7 +152,8 @@ public class String_2 {
         // System.out.println("abXabc".length()-"abc".length());
         // System.out.println("abXabc".substring("abXabc".length()-"abc".length()));
         // System.out.println(obj.xyzThere("abc.xyz"));
-        System.out.println(obj.xyBalance("aaxbby"));
+        // System.out.println(obj.xyBalance("aaxbby"));
+        System.out.println(obj.mixString("abc", "xyz")) ;
 
     }
 
