@@ -100,7 +100,27 @@ public class String_2 {
         return false;        
 
     }
+    public boolean xyBalance(String str){
+        // We'll say that a String is xy-balanced if for all the 'x' chars in the string, there exists a 'y' char somewhere later in the string. So "xxy" is balanced, but "xyx" is not. One 'y' can balance multiple 'x's. Return true if the given string is xy-balanced.
+        boolean balanced=false;
+        int countx=0;
+        int county=0;
+        for (int i = 0; i< str.length();i++){
+            if(str.charAt(i)=='x'){
+                balanced=false;
+                countx++;
+            }
+            if(str.charAt(i)=='y'){
+                balanced=true;
+                county++;
+            }
+        }
+        if(countx==0&&county==0){
+            return true;
+        }
+        return balanced;
 
+    }
     public static void main(String[] args) {
         String_2 obj = new String_2();
         // System.out.println(obj.doubleChar("The"));
@@ -113,6 +133,7 @@ public class String_2 {
         // System.out.println("abXabc".length()-"abc".length());
         // System.out.println("abXabc".substring("abXabc".length()-"abc".length()));
         // System.out.println(obj.xyzThere("abc.xyz"));
+        System.out.println(obj.xyBalance("aaxbby"));
 
     }
 
