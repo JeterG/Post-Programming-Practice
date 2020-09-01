@@ -120,6 +120,18 @@ public class String_2 {
         return temp;
     }
 
+    public static String repeatSeparator(String word, String sep, int count){
+        // Given two strings, word and a separator sep, return a big string made of count occurences of the word, separated by the separator string.
+        String temp="";
+        for(int i=0; i <count;i++){
+            temp+=word;
+            if(i<count-1){
+                temp+=sep;
+            }
+        }
+        return temp;
+    }
+
     public static void main(String[] args) {
         String_2 obj = new String_2();
         // System.out.println(obj.doubleChar("The"));
@@ -133,7 +145,9 @@ public class String_2 {
         // System.out.println("abXabc".substring("abXabc".length()-"abc".length()));
         // System.out.println(obj.xyzThere("abc.xyz"));
         // System.out.println(obj.repeatEnd("abc",2));
-        System.out.println(obj.repeatFront("abc",2));
+        // System.out.println(obj.repeatFront("abc",2));
+        System.out.println(obj.repeatSeparator("abc","1",2));
+
 
     }
 
