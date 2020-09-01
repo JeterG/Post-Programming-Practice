@@ -111,6 +111,15 @@ public class String_2 {
 
         return temp;
     }
+    public String repeatFront(String str, int n){
+        // Given a string and an int n, return a string made of the first n characters of the string, followed by the first n-1 characters f the string and so on. You may assume that n is between 0 and the length of the string, inclusive (i.e. n>=0 and n<=str.length()).
+        String temp="";
+        for (int i=0; i<n;i++){
+            temp+=str.substring(0,n-i);
+        }
+        return temp;
+    }
+
     public static void main(String[] args) {
         String_2 obj = new String_2();
         // System.out.println(obj.doubleChar("The"));
@@ -123,7 +132,8 @@ public class String_2 {
         // System.out.println("abXabc".length()-"abc".length());
         // System.out.println("abXabc".substring("abXabc".length()-"abc".length()));
         // System.out.println(obj.xyzThere("abc.xyz"));
-        System.out.println(obj.repeatEnd("abc",2));
+        // System.out.println(obj.repeatEnd("abc",2));
+        System.out.println(obj.repeatFront("abc",2));
 
     }
 
