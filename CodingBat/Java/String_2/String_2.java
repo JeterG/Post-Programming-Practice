@@ -101,6 +101,16 @@ public class String_2 {
 
     }
 
+    public String repeatEnd(String str, int n){
+        // Given a string and an int n, return a string made of n repetitions of the last n characters of the string.You may assume that n is between 0 and the length of the string, inclusive.
+        // String reverse = new StringBuffer(str).reverse().toString();
+        String temp="";
+        for(int i=0;i<n;i++){
+            temp+=str.substring(str.length()-n);
+        }
+
+        return temp;
+    }
     public static void main(String[] args) {
         String_2 obj = new String_2();
         // System.out.println(obj.doubleChar("The"));
@@ -113,6 +123,7 @@ public class String_2 {
         // System.out.println("abXabc".length()-"abc".length());
         // System.out.println("abXabc".substring("abXabc".length()-"abc".length()));
         // System.out.println(obj.xyzThere("abc.xyz"));
+        System.out.println(obj.repeatEnd("abc",2));
 
     }
 
