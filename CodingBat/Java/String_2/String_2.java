@@ -132,6 +132,13 @@ public class String_2 {
         return temp;
     }
 
+    public static boolean prefixAgain(String str, int n){
+        // Given a string, consider the prefix string made of the first N chars of the string. Does that prefix string appear somewhe4re else in the string? Assume that the string is not empty and that N is in the range 1..str.length()
+        String prefix=str.substring(0,n);
+        String temp=str.substring(n);
+        return temp.contains(prefix);
+    }
+
     public static void main(String[] args) {
         String_2 obj = new String_2();
         // System.out.println(obj.doubleChar("The"));
@@ -146,7 +153,8 @@ public class String_2 {
         // System.out.println(obj.xyzThere("abc.xyz"));
         // System.out.println(obj.repeatEnd("abc",2));
         // System.out.println(obj.repeatFront("abc",2));
-        System.out.println(obj.repeatSeparator("abc","1",2));
+        // System.out.println(obj.repeatSeparator("abc","1",2));
+        System.out.println(obj.prefixAgain("abXYabc",2));
 
 
     }
