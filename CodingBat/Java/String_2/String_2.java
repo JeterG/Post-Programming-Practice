@@ -139,6 +139,43 @@ public class String_2 {
         return temp.contains(prefix);
     }
 
+    public static boolean xyzMiddle(String str){
+        // Given a string, does "xyz" appear in the midle of the string? To define the middle we'll say that the number of chars to the left and right of the xyz must differ by at most one. This problem is harder than it looks.
+        if(str.length()<3){
+            return false;
+        }
+        int occurences=0;
+        int lastIndex=0;
+        String indexes="";
+        while(lastIndex!=-1){
+            lastIndex=str.indexOf("xyz",lastIndex);
+            if(lastIndex!=-1){
+                indexes+=String.valueOf(lastIndex);
+                System.out.println(indexes);
+                occurences++;
+                lastIndex+=3;
+            }
+        }
+        System.out.println(occurences);
+
+        //Can put this if condition into the while loop and do it at each time that there is an occurence and then if they are all false then return false, so only return from the while loop if its true.
+        if(occurences==1){
+            int firstOccurrence=str.indexOf("xyz");
+            String front=str.substring(0,firstOccurrence);
+            String end=str.substring(firstOccurrence+3);
+            int difference=front.length()-end.length();
+            return ((difference==0)|| (difference==1)||(difference==-1) );
+        }
+        else{//handle occurances
+            return false;
+        }
+        // Can be more than one occurance of xyz in the string, so checking the index of the appearance if xyz is in the string can help.
+        //I can reverse the string and slice the string until the first occurance of Z in the reverse direction.   
+        //Have to consider if xyz occurs more than once and if it does then have to check if any of those occurences is in the middle if they are all false then its false but if even one of them is true then its true that the xyz is in the middle.
+        
+    }
+
+
     public static void main(String[] args) {
         String_2 obj = new String_2();
         // System.out.println(obj.doubleChar("The"));
@@ -154,7 +191,9 @@ public class String_2 {
         // System.out.println(obj.repeatEnd("abc",2));
         // System.out.println(obj.repeatFront("abc",2));
         // System.out.println(obj.repeatSeparator("abc","1",2));
-        System.out.println(obj.prefixAgain("abXYabc",2));
+        // System.out.println(obj.prefixAgain("abXYabc",2));
+        System.out.println(obj.xyzMiddle("xyzxyzAxyzxyzxyz"));
+
 
 
     }
