@@ -100,46 +100,82 @@ public class String_2 {
         return false;        
 
     }
-    public boolean xyBalance(String str){
-        // We'll say that a String is xy-balanced if for all the 'x' chars in the string, there exists a 'y' char somewhere later in the string. So "xxy" is balanced, but "xyx" is not. One 'y' can balance multiple 'x's. Return true if the given string is xy-balanced.
-        boolean balanced=false;
-        int countx=0;
-        int county=0;
-        for (int i = 0; i< str.length();i++){
-            if(str.charAt(i)=='x'){
-                balanced=false;
-                countx++;
-            }
-            if(str.charAt(i)=='y'){
-                balanced=true;
-                county++;
-            }
-        }
-        if(countx==0&&county==0){
-            return true;
-        }
-        return balanced;
 
+    public String repeatEnd(String str, int n){
+        // Given a string and an int n, return a string made of n repetitions of the last n characters of the string.You may assume that n is between 0 and the length of the string, inclusive.
+        // String reverse = new StringBuffer(str).reverse().toString();
+        String temp="";
+        for(int i=0;i<n;i++){
+            temp+=str.substring(str.length()-n);
+        }
+
+        return temp;
+    }
+    public String repeatFront(String str, int n){
+        // Given a string and an int n, return a string made of the first n characters of the string, followed by the first n-1 characters f the string and so on. You may assume that n is between 0 and the length of the string, inclusive (i.e. n>=0 and n<=str.length()).
+        String temp="";
+        for (int i=0; i<n;i++){
+            temp+=str.substring(0,n-i);
+        }
+        return temp;
     }
 
-    public String mixString(String a, String b){
-        // Given two strings, a and b, create a bigger string made of the first char of a, the first char of b, the second char of a, the second char of b, and so on. Any leftover chars go at the end of the result.
-        int lenA=a.length();
-        int lenB=b.length();
-        String result="";
-        if(lenA>lenB){
-            for(int i =0; i<lenB;i++){
-                result=result +a.charAt(i)+b.charAt(i);
+    public static String repeatSeparator(String word, String sep, int count){
+        // Given two strings, word and a separator sep, return a big string made of count occurences of the word, separated by the separator string.
+        String temp="";
+        for(int i=0; i <count;i++){
+            temp+=word;
+            if(i<count-1){
+                temp+=sep;
             }
-            result=result +a.substring(lenB);
-            return result;
         }
-        for(int i =0; i<lenA;i++){
-            result= result +a.charAt(i)+b.charAt(i);
-        }
-        result= result +b.substring(lenA);
-        return result;
+        return temp;
     }
+
+    public static boolean prefixAgain(String str, int n){
+        // Given a string, consider the prefix string made of the first N chars of the string. Does that prefix string appear somewhe4re else in the string? Assume that the string is not empty and that N is in the range 1..str.length()
+        String prefix=str.substring(0,n);
+        String temp=str.substring(n);
+        return temp.contains(prefix);
+    }
+
+    public static boolean xyzMiddle(String str){
+        // Given a string, does "xyz" appear in the midle of the string? To define the middle we'll say that the number of chars to the left and right of the xyz must differ by at most one. This problem is harder than it looks.
+        if(str.length()<3){
+            return false;
+        }
+        int occurences=0;
+        int lastIndex=0;
+        String indexes="";
+        while(lastIndex!=-1){
+            lastIndex=str.indexOf("xyz",lastIndex);
+            if(lastIndex!=-1){
+                indexes+=String.valueOf(lastIndex);
+                System.out.println(indexes);
+                occurences++;
+                lastIndex+=3;
+            }
+        }
+        System.out.println(occurences);
+
+        //Can put this if condition into the while loop and do it at each time that there is an occurence and then if they are all false then return false, so only return from the while loop if its true.
+        if(occurences==1){
+            int firstOccurrence=str.indexOf("xyz");
+            String front=str.substring(0,firstOccurrence);
+            String end=str.substring(firstOccurrence+3);
+            int difference=front.length()-end.length();
+            return ((difference==0)|| (difference==1)||(difference==-1) );
+        }
+        else{//handle occurances
+            return false;
+        }
+        // Can be more than one occurance of xyz in the string, so checking the index of the appearance if xyz is in the string can help.
+        //I can reverse the string and slice the string until the first occurance of Z in the reverse direction.   
+        //Have to consider if xyz occurs more than once and if it does then have to check if any of those occurences is in the middle if they are all false then its false but if even one of them is true then its true that the xyz is in the middle.
+        
+    }
+
+
     public static void main(String[] args) {
         String_2 obj = new String_2();
         // System.out.println(obj.doubleChar("The"));
@@ -152,8 +188,13 @@ public class String_2 {
         // System.out.println("abXabc".length()-"abc".length());
         // System.out.println("abXabc".substring("abXabc".length()-"abc".length()));
         // System.out.println(obj.xyzThere("abc.xyz"));
-        // System.out.println(obj.xyBalance("aaxbby"));
-        System.out.println(obj.mixString("abc", "xyz")) ;
+        // System.out.println(obj.repeatEnd("abc",2));
+        // System.out.println(obj.repeatFront("abc",2));
+        // System.out.println(obj.repeatSeparator("abc","1",2));
+        // System.out.println(obj.prefixAgain("abXYabc",2));
+        System.out.println(obj.xyzMiddle("xyzxyzAxyzxyzxyz"));
+
+
 
     }
 
